@@ -6,9 +6,8 @@ namespace GuessTheNumber
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello");
+			var game = new GameLogic();
+			game.InitialiseGame();
         }
     }
 }
