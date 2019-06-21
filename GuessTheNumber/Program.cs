@@ -8,7 +8,7 @@ namespace GuessTheNumber
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Hej");
+            Console.WriteLine("Hello");
         }
     }
 }
