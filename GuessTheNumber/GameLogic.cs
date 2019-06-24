@@ -12,6 +12,7 @@ namespace GuessTheNumber
 
 		public void InitialiseGame()
 		{
+
 			Console.WriteLine("Type a number between 1-1000");
 			secretNumber = Convert.ToInt32(Console.ReadLine());			
 		}
@@ -21,16 +22,15 @@ namespace GuessTheNumber
 			Console.WriteLine("Is the number: ????");
 
 		}
-		public char Compare()
-		{
-			char answer;
-			if (true)
-			{
+		//public Compare()
+		//{
+		//	char answer;
+		//	if (true)
+		//	{
 
-			}
-			Console.WriteLine("Is the guesse);
-			return answer;
-		}
+		//	}
+		//	Console.WriteLine("Is the guesse");
+		//}
 
 
 
