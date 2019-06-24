@@ -6,8 +6,8 @@ namespace GuessTheNumber
     {
         static void Main(string[] args)
         {
-			var game = new GameLogic();
-			game.InitialiseGame();
+            AIPlayer newGame = new AIPlayer();
+            newGame.Run();
         }
     }
 }
