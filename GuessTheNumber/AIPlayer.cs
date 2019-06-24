@@ -20,9 +20,6 @@ namespace GuessTheNumber
 
             bool gameOver = false;
 
-
-
-
             while (!gameOver)
             {
                 Console.WriteLine("AI: My " + count + ". guess is " + guessNumber);
