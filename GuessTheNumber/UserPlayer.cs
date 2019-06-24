@@ -47,7 +47,6 @@ namespace GuessTheNumber
             if (number >= _secretNumber)
             {
                 high = true;
-
             }
 
             return high;

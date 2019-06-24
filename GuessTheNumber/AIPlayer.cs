@@ -62,7 +62,6 @@ namespace GuessTheNumber
                 {
                     Console.WriteLine("AI lost the game");
                     gameOver = true;
-
                 }
 
                 count++;
