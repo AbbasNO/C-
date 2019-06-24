@@ -6,6 +6,8 @@ namespace GuessTheNumber
 {
     class AIPlayer
     {
+		bool AIGoLow = false;
+		bool AIGoHigh = false;
         private readonly UserPlayer secretNumber = new UserPlayer();
 
         Random randomNumber = new Random();
@@ -24,8 +26,7 @@ namespace GuessTheNumber
             {
 				int converted = (int)guessNumber + 1;
                 Console.WriteLine("AI: My " + count + ". guess is " + converted);
-                bool AIGoLow = false;
-                bool AIGoHigh = false;
+                
 
 
                 AIGoLow = secretNumber.TooHigh(converted);
@@ -39,7 +40,7 @@ namespace GuessTheNumber
                     double half = (maxValue - minValue) / 2;
                     guessNumber -= half + 1;
 
-                    Console.WriteLine("Player says: Go lower.");
+					AskTheUser();
                 }
                 else if (!AIGoLow && AIGoHigh)
                 {
@@ -48,8 +49,7 @@ namespace GuessTheNumber
                     double half = (maxValue - minValue) / 2;
                     guessNumber += half;
 
-                    Console.WriteLine("Player says: Go higher.");
-
+					AskTheUser();
                 }
                 else if (AIGoLow && AIGoHigh)
                 {
@@ -62,11 +62,30 @@ namespace GuessTheNumber
                     gameOver = true;
                 }
 
-                count++;
-                //Update
-
+                count++;                
             }
 
         }
+		public void AskTheUser()
+		{
+			
+			string answer;
+			Console.WriteLine("Is the number higher(H) or lower(L) than my guess?");
+			answer = Console.ReadLine().ToLower();
+			if (answer == "h" && AIGoHigh)
+			{
+				Console.WriteLine("Okay, let me guess again");
+			}
+			else if (answer == "l" && AIGoLow)
+			{
+				Console.WriteLine("Okay, let me guess again");
+			}
+			else
+			{
+				Console.WriteLine("Please enter only H or L, and do not try to cheat!");
+				AskTheUser();
+			}
+		}
+
     }
 }
