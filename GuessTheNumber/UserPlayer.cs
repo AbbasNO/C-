@@ -6,10 +6,10 @@ namespace GuessTheNumber
 {
     class UserPlayer
     {
-        private int _secretNumber;
+        private double _secretNumber;
 
 
-        public int SecretNumber
+        public double SecretNumber
         {
             get { return _secretNumber; }
             set
@@ -40,7 +40,7 @@ namespace GuessTheNumber
 
 
 
-        public bool TooHigh(int number)
+        public bool TooHigh(double number)
         {
             bool high = false;
 
@@ -52,7 +52,7 @@ namespace GuessTheNumber
             return high;
         }
 
-        public bool TooLow(int number)
+        public bool TooLow(double number)
         {
             bool low = false;
 

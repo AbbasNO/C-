@@ -12,31 +12,32 @@ namespace GuessTheNumber
 
         public void Run()
         {
-            int guessNumber = randomNumber.Next(475, 525);
+            double guessNumber = randomNumber.Next(475, 525);
             int count = 1;
 
-            int maxValue = 1000;
-            int minValue = 1;
+            double maxValue = 1000;
+            double minValue = 1;
 
             bool gameOver = false;
 
             while (!gameOver)
             {
-                Console.WriteLine("AI: My " + count + ". guess is " + guessNumber);
+				int converted = (int)guessNumber + 1;
+                Console.WriteLine("AI: My " + count + ". guess is " + converted);
                 bool AIGoLow = false;
                 bool AIGoHigh = false;
 
 
-                AIGoLow = secretNumber.TooHigh(guessNumber);
-                AIGoHigh = secretNumber.TooLow(guessNumber);
+                AIGoLow = secretNumber.TooHigh(converted);
+                AIGoHigh = secretNumber.TooLow(converted);
 
 
                 if (AIGoLow && !AIGoHigh)
                 {
                     maxValue = guessNumber;
 
-                    int half = (maxValue - minValue) / 2;
-                    guessNumber -= half;
+                    double half = (maxValue - minValue) / 2;
+                    guessNumber -= half + 1;
 
                     Console.WriteLine("Player says: Go lower.");
                 }
@@ -44,7 +45,7 @@ namespace GuessTheNumber
                 {
                     minValue = guessNumber;
 
-                    int half = (maxValue - minValue) / 2;
+                    double half = (maxValue - minValue) / 2;
                     guessNumber += half;
 
                     Console.WriteLine("Player says: Go higher.");
