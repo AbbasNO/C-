@@ -7,7 +7,7 @@ namespace GuessTheNumber
         static void Main(string[] args)
         {
             AIPlayer newGame = new AIPlayer();
-            newGame.Run();
+			newGame.Run();
         }
     }
 }

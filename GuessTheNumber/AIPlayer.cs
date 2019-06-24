@@ -4,11 +4,15 @@ using System.Text;
 
 namespace GuessTheNumber
 {
-    class AIPlayer
+
+	public class AIPlayer
     {
+		public bool gameOver = false;
 		bool AIGoLow = false;
 		bool AIGoHigh = false;
-        private readonly UserPlayer secretNumber = new UserPlayer();
+		int converted;
+
+		private readonly UserPlayer secretNumber = new UserPlayer();
 
         Random randomNumber = new Random();
 
@@ -20,11 +24,10 @@ namespace GuessTheNumber
             double maxValue = 1000;
             double minValue = 1;
 
-            bool gameOver = false;
 
             while (!gameOver)
             {
-				int converted = (int)guessNumber + 1;
+				converted = (int)guessNumber + 1;
                 Console.WriteLine("AI: My " + count + ". guess is " + converted);
                 
 
@@ -69,6 +72,9 @@ namespace GuessTheNumber
 		public void AskTheUser()
 		{
 			
+			//AIGoLow = secretNumber.TooHigh(converted);
+			//AIGoHigh = secretNumber.TooLow(converted);
+
 			string answer;
 			Console.WriteLine("Is the number higher(H) or lower(L) than my guess?");
 			answer = Console.ReadLine().ToLower();
